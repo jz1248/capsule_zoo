@@ -31,13 +31,13 @@ class Backend(TFObjectDetector):
 
 
 class Capsule(BaseCapsule):
-    name = "detector_face_fast"
-    description = "✨ Efficiently detect faces in most environments."
+    name = "detector_buildings_factory"
+    description = "Detect factory buildings in remote sensing images."
     version = 1
     input_type = NodeDescription(size=NodeDescription.Size.NONE)
     output_type = NodeDescription(
         size=NodeDescription.Size.ALL,
-        detections=["face"],
+        detections=["Factory"],
         extra_data=[detection_confidence])
     backend_loader = lambda capsule_files, device: Backend(
         device=device,
